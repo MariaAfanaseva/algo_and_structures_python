@@ -7,6 +7,7 @@ try:
     y1 = int(date[1])
     x2 = int(date[2])
     y2 = int(date[3])
+    # x1, y1, x2, y2 = list(map(int, date))
 except ValueError:
     print('Неверно введены значения')
     quit()
