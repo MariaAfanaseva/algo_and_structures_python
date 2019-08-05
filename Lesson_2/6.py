@@ -14,16 +14,15 @@ def guess(number, num_try=1):
             print('Вы проиграли')
             return
         else:
-            n = int(input(f'Введите число. Попытка номер {num_try}: '))
+            n = int(input(f'Введите число. Попытка номер {num_try} из 10: '))
             if n == number:
                 print('Вы угадали!')
                 return
             elif n > number:
                 print('Загаданное число меньше')
-                guess(number, num_try + 1)
             else:
                 print('Загаданное число больше')
-                guess(number, num_try + 1)
+            guess(number, num_try + 1)
     except ValueError:
         print('Вы ввели не число')
         guess(number, num_try)
@@ -31,7 +30,7 @@ def guess(number, num_try=1):
 
 def main():
     number = random.randint(1, 100)
-    print(number)
+    # print(number)
     print('Число загадано, отгадайте!')
     guess(number)
 

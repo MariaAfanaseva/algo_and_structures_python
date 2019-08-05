@@ -16,10 +16,21 @@ def count_type(num, even, uneven):
         return count_type(num // 10, even, uneven)
 
 
+def count_type_1(num):
+    even, uneven = [], []
+    for i in num:
+        if int(i) % 2 == 0:
+            even.append(i)
+        else:
+            uneven.append(i)
+    return even, uneven
+
+
 def main():
     try:
-        num = int(input('Введите число: '))
-        even, uneven = count_type(num, [], [])
+        num = input('Введите число: ')
+        even, uneven = count_type(int(num), [], [])
+        # even, uneven = count_type_1(num)
         print(f'В числе {len(even)} {*even,} четных и {len(uneven)} {*uneven,} не четных чисел')
     except ValueError:
         print('Вы введи не число')
