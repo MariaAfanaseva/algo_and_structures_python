@@ -9,3 +9,64 @@
 Также сообщать пользователю о невозможности деления на ноль,
 если он ввел 0 в качестве делителя.
 """
+
+
+def num_operation():
+    try:
+        num_1 = int(input('Введите число 1: '))
+        num_2 = int(input('Введите число 2: '))
+        operation = input('Введите операцию(0 (для отмены), +, -, *, /: ')
+        if operation == '0':
+            return
+        elif operation == '+':
+            print(num_1 + num_2)
+        elif operation == '-':
+            print(num_1 - num_2)
+        elif operation == '*':
+            print(num_1 * num_2)
+        elif operation == '/':
+            if num_2 == 0:
+                print('На 0 делить нельзя')
+            else:
+                print(num_1 / num_2)
+        else:
+            print('Вы ввели неправильную операцию')
+        num_operation()
+    except ValueError:
+        print('Вы ввели не число')
+        num_operation()
+
+
+num_operation()
+
+#  or
+
+
+def num_operation_1():
+    while True:
+        try:
+            num_1 = int(input('Введите число 1: '))
+            num_2 = int(input('Введите число 2: '))
+        except ValueError:
+            print('Вы ввели не число')
+            continue
+        operation = input('Введите операцию(0 (для отмены), +, -, *, /: ')
+        if operation == '0':
+            print('До свидания')
+            break
+        elif operation == '+':
+            print(num_1 + num_2)
+        elif operation == '-':
+            print(num_1 - num_2)
+        elif operation == '*':
+            print(num_1 * num_2)
+        elif operation == '/':
+            if num_2 == 0:
+                print('На 0 делить нельзя')
+            else:
+                print(num_1 / num_2)
+        else:
+            print('Вы ввели неправильное значение')
+
+
+num_operation_1()
