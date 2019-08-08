@@ -16,7 +16,7 @@ def main():
     try:
         search = input('Ввкдите число которое нужно найти: ')
         numbers = input('Введите последовательность чисел: ').split()
-        print(f'Количество {search} в последовательности равно {cont_number(search, numbers)}')
+        print(f'Количество {search} в последовательности равно {cont_number_1(search, numbers)}')
     except ValueError:
         print('Вы ввели не число')
 
