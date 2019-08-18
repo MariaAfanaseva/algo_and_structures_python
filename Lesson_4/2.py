@@ -43,10 +43,27 @@ def get_simple_1(num):
         inx += 1
 
 
+def get_simple_2(i):
+    if i == 1:
+        return 2
+    simple = [2]
+    number = 2
+    while len(simple) < i:
+        number += 1
+        is_simply = True
+        for el in simple:
+            if number % el == 0:
+                is_simply = False
+        if is_simply:
+            simple.append(number)
+    return number
+
+
 def main():
     num = int(input('Введите номер по счёту простого числа: '))
     print(get_simple(num))
     print(get_simple_1(num))
+    print(get_simple_2(num))
 
 
 def test():
@@ -60,7 +77,7 @@ def test():
 
 
 main()
-test()
+# test()
 
 '''
 Начиная с числа 17 «Решето Эратосфена» работает быстрее
